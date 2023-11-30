@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta property="og:title"
+        content="Learning Disentangled Identifiers for Action-Customized Text-to-Image Generation" />
+    <meta property="og:url" content="https://ranni.github.io/" />
+    <meta property="og:image" content="static/images/head.png" />
+    <meta property="og:image:width" content="2048" />
+    <meta property="og:image:height" content="1152" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>ADI</title>
+    <script>
+        var x = window.innerWidth;
+        function resizeFresh(){
+            if(x!=window.innerWidth)
+                location.reload();
+        }
+    </script>
+    <link rel="icon" type="image/x-icon" href="static/images/2.png">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.1.1/gradio.js"></script>
+</head>
+
+<body onresize="resizeFresh()">
+
+    <section class="hero banner">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            <i class="pixart-alpha-icon"></i>
+                            <!-- <span style="color: rgb(167, 175, 246);">SimM:</span> -->
+                            <span style="color: rgb(252, 255, 165);">ADI:</span><br />
+                            Learning Disentangled Identifiers for Action-Customized Text-to-Image Generation</h1>
+                        <div class="is-size-5 publication-authors">
+                            <!-- Paper authors -->
+                            <span class="author-block">
+                                <a href="https://kyonhuang.top/" target="_blank">Siteng
+                                    Huang</a><sup>1,3,*</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=BwdpTiQAAAAJ" target="_blank">Biao
+                                    Gong</a><sup>2</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=mZwJLeUAAAAJ" target="_blank">Yutong
+                                    Feng</a><sup>2</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://xavierchen34.github.io/" target="_blank">Xi
+                                    Chen</a><sup>2</sup>,</span>                                    
+                            <span class="author-block">
+                                <a href="http://yuqianfu.com/" target="_blank">
+                                    Yuqian
+                                    Fu</a><sup>4</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=8zksQb4AAAAJ" target="_blank">
+                                    Yu
+                                    Liu</a><sup>2</sup>,</span>    
+                            <span class="author-block">
+                                <a href="https://milab.westlake.edu.cn/" target="_blank">
+                                    Donglin
+                                    Wang</a><sup>1</sup></span>                                                        
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Machine Intelligence Lab (MiLAB), AI Division, School of Engineering, Westlake University</span>
+                            <br />
+                            <span class="author-block"><sup>2</sup>Alibaba Group</span>&nbsp;&nbsp;<span class="author-block"><sup>3</sup>Zhejiang University</span>&nbsp;&nbsp;<span class="author-block"><sup>4</sup>ETH Zurich</span>
+                            <span class="eql-cntrb"><small><br><sup>*</sup>Work done during internship at Alibaba Group.</small></span>
+                        </div>
+                        
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/pdf/2311.15841.pdf" target="_blank"
+                                        class="external-link button is-normal is-rounded is-white">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2311.15841" target="_blank"
+                                        class="external-link button is-normal is-rounded is-white">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image carousel -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <section class="section" style="padding-top: 0px;">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <div class="publication-video-simm">
+                                <video width="100%" controls>
+                                    <source src="https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/439947158603.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- End image carousel -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            This study focuses on a novel task in text-to-image (T2I) generation, 
+                            namely action customization. 
+                            The objective of this task is to learn the co-existing action from limited data and generalize it 
+                            to unseen humans or even animals. Experimental results show that existing subject-driven customization 
+                            methods fail to learn the representative characteristics of actions and struggle in decoupling actions 
+                            from context features, including appearance. To overcome the preference for low-level features and the 
+                            entanglement of high-level features, we propose an inversion-based method <b>Action-Disentangled Identifier</b> (<b>ADI</b>) 
+                            to learn action-specific identifiers from the exemplar images. <b>ADI</b> first expands the semantic conditioning 
+                            space by introducing layer-wise identifier tokens, thereby increasing the representational richness while 
+                            distributing the inversion across different features. Then, to block the inversion of action-agnostic features, 
+                            <b>ADI</b> extracts the gradient invariance from the constructed sample triples and masks the updates of irrelevant channels. 
+                            To comprehensively evaluate the task, we present an ActionBench that includes a variety of actions, 
+                            each accompanied by meticulously selected samples. Both quantitative and qualitative results show that our <b>ADI</b> outperforms 
+                            existing baselines in action-customized T2I generation.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <!-- <h2 class="title is-3">Samples generated by <i class="pixart-alpha-icon"></i><span style="color: rgb(72, 87, 220);">Ranni</span></h2> -->
+                <h2 class="title is-3">Examples</h2>
+                <p>
+                    <!-- Action customization results of our <b>ADI</b> method.  -->
+                    By inverting representative action-related features, 
+                    the learned identifiers <b>"&lt;A&gt;"</b> can be paired with a variety of characters and animals to contribute to 
+                    the generation of accurate, diverse and high-quality images.
+                </p>
+                <img loading="lazy" src="static/images/samples/1.jpg" alt="1" />
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <!-- <h2 class="title is-3">Samples generated by <i class="pixart-alpha-icon"></i><span style="color: rgb(72, 87, 220);">Ranni</span></h2> -->
+                <h2 class="title is-3">Comparisons</h2>
+                <img loading="lazy" src="static/images/samples/4.jpg" alt="4" />                                  
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <!-- <h2 class="title is-3">Samples generated by <i class="pixart-alpha-icon"></i><span style="color: rgb(72, 87, 220);">Ranni</span></h2> -->
+                <h2 class="title is-3">Method</h2>
+                <p>
+                    Overview of our <b>ADI</b> method. <b>ADI</b> learns more efficient action identifiers by extending the semantic conditioning space and
+                    masking gradient updates to action-agnostic channels.
+                </p>
+                <img loading="lazy" src="static/images/samples/2.jpg" alt="2" />                              
+            </div>
+        </div>
+    </section>
+   
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{ADI2024,
+    title={Learning Disentangled Identifiers for Action-Customized Text-to-Image Generation}, 
+    author={Siteng Huang and Biao Gong and Yutong Feng and Xi Chen and Yuqian Fu and Yu Liu and Donglin Wang},
+    year={2023},
+    eprint={2311.15841},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}</code></pre>
+        </div>
+    </section>
+    <!--End BibTex citation -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            You are free to borrow the of this website, we just ask that you link back to this page in
+                            the footer. <br> This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                        <p class="has-text-centered">Total clicks: <span id="busuanzi_value_site_pv"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
